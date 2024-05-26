@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    android:backgroundTint="@color/blue"
+    android:background="@drawable/outline">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/questionTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Question text goes here"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"/>
+
+        <RadioGroup
+            android:id="@+id/choicesRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/choiceARadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/outline"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="2dp"
+
+                android:text="Choice A"/>
+
+            <RadioButton
+                android:id="@+id/choiceBRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/outline"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="2dp"
+                android:text="Choice B"/>
+
+            <RadioButton
+                android:id="@+id/choiceCRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/outline"
+                android:backgroundTint="@color/white"
+                android:layout_marginBottom="2dp"
+                android:text="Choice C"/>
+
+            <RadioButton
+                android:id="@+id/choiceDRadioButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/outline"
+                android:backgroundTint="@color/white"
+
+                android:text="Choice D"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/submitBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:backgroundTint="@color/ivory"
+            android:layout_gravity="center"
+            android:text="Check"/>
+
+
+    </LinearLayout>
+
+
+</androidx.cardview.widget.CardView>

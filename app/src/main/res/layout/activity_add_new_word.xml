@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:gravity="center"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add New Word"
+        android:gravity="start"
+        android:textSize="35sp"
+        android:textColor="@color/purpleHaze"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"/>
+
+
+    <EditText
+        android:id="@+id/wordText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_input"
+        android:ems="20"
+        android:hint="@string/enter_the_word"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+
+        />
+
+    <EditText
+        android:id="@+id/meaningText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/custom_input"
+        android:drawablePadding="10dp"
+        android:ems="20"
+        android:hint="@string/enter_the_meaning"
+        android:inputType="text"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="10dp" />
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:text="@string/box_color" />
+
+        <RadioButton
+            android:id="@+id/greyButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:buttonTint="@color/darkGrey"
+            android:onClick="onColorRadioButtonClicked"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/blueButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:buttonTint="@color/blue"
+            android:onClick="onColorRadioButtonClicked" />
+
+        <RadioButton
+            android:id="@+id/redButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:buttonTint="@color/red"
+            android:onClick="onColorRadioButtonClicked" />
+
+        <RadioButton
+            android:id="@+id/greenButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:buttonTint="@color/green"
+            android:onClick="onColorRadioButtonClicked" />
+
+        <RadioButton
+            android:id="@+id/yellowButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:buttonTint="@color/yellow"
+            android:onClick="onColorRadioButtonClicked" />
+
+    </RadioGroup>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:text="@string/word_type" />
+
+            <RadioButton
+                android:id="@+id/nounButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="onTypeRadioButtonClicked"
+                android:text="@string/noun" />
+
+            <RadioButton
+                android:id="@+id/pronounButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="onTypeRadioButtonClicked"
+                android:text="@string/pronoun" />
+
+            <RadioButton
+                android:id="@+id/verbButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="onTypeRadioButtonClicked"
+                android:text="@string/verb" />
+
+            <RadioButton
+                android:id="@+id/adjectiveButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="onTypeRadioButtonClicked"
+                android:text="@string/adjective" />
+
+
+        </RadioGroup>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/adverbButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="onTypeRadioButtonClicked"
+                android:text="@string/adverb" />
+
+            <RadioButton
+                android:id="@+id/prepositionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="onTypeRadioButtonClicked"
+                android:text="@string/preposition" />
+
+            <RadioButton
+                android:id="@+id/conjunctionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="onTypeRadioButtonClicked"
+                android:text="@string/conjunction" />
+
+            <RadioButton
+                android:id="@+id/interjectionButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:onClick="onTypeRadioButtonClicked"
+                android:text="@string/interjection" />
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="saveButtonClicked"
+        android:text="Save"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/purpleHaze"/>
+
+</LinearLayout>

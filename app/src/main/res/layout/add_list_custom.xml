@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Create List"
+        android:textSize="35sp"
+        android:textColor="@color/purpleHaze"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/categoryEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/custom_input"
+        android:ems="15"
+        android:hint="Enter Category Name"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="5dp"
+        android:paddingBottom="10dp"
+        android:layout_marginHorizontal="10dp"/>
+
+    <Button
+        android:id="@+id/addCategoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/purpleHaze"
+        android:text="Save"
+        android:textColor="@color/white" />
+
+
+</LinearLayout>

@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.WordAppJava2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/darkGrey</item>
+        <item name="colorPrimaryVariant">@color/darkGrey</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+    <style name="ScreenBackground"><item name="android:background">@color/black</item></style>
+    <style name="CardBackground"><item name="android:background">@color/darkGrey</item></style>
+    <style name="TextColor"><item name="android:textColor">@color/grey</item></style>
+    <style name="NavHeaderBackground"><item name="android:background">@color/darkGrey</item></style>
+    <style name="ImageColor"><item name="android:tint">@color/white</item></style>
+    <style name="IconBackground"><item name="android:background">@color/darkGrey</item></style>
+</resources>
