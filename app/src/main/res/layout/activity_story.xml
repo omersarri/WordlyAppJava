@@ -23,7 +23,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create a Story"
-        android:textColor="@color/lilac"
+        style="@style/TitleTextColor"
         android:textSize="28sp"
         android:textStyle="bold"
         android:padding="10dp"
@@ -64,7 +64,7 @@
                         android:src="@drawable/baseline_arrow_drop_down_30" />
                     <TextView
                         android:id="@+id/storyTitle"
-                        style="@style/TextColor"
+                        style="@style/SmallTitleTextColor"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text=""
@@ -93,6 +93,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="15dp"
                 android:text=""
+                style="@style/TextColor"
                 android:textSize="22sp"
                 android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -102,6 +103,7 @@
                 android:id="@+id/infoText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/TextColor"
                 android:gravity="center"
                 android:text="infoText"
                 android:textSize="18sp" />
@@ -120,7 +122,7 @@
                     android:src="@drawable/baseline_arrow_drop_down_30" />
                 <TextView
                     android:id="@+id/questionsTitle"
-                    style="@style/TextColor"
+                    style="@style/SmallTitleTextColor"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Quiz"

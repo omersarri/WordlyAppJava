@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
     android:orientation="vertical"
     android:paddingHorizontal="20dp"
     android:paddingVertical="10dp"
@@ -16,22 +13,24 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:gravity="center"
         android:layout_marginTop="20dp"
+        android:gravity="center"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-
+            android:layout_marginTop="30dp"
             android:orientation="horizontal">
+
             <TextView
+                style="@style/TextColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Select List:   "
-                style="@style/TextColor"
-                android:textSize="15dp"/>
+                android:textSize="15dp" />
+
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="120dp"
@@ -43,7 +42,6 @@
         </LinearLayout>
 
 
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cardViewStory"
             android:layout_width="match_parent"
@@ -51,6 +49,7 @@
             android:layout_marginTop="10dp"
             android:clickable="false"
             app:cardCornerRadius="20dp"
+            style="@style/CardBackground"
             app:constraint_referenced_ids=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +86,7 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="5dp"
                         android:text="Create a Story"
-                        android:textColor="@color/purpleHaze"
+                        style="@style/TitleTextColor"
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
@@ -96,7 +95,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="20dp"
                         android:text="Create little stories with your words"
-                        android:textColor="@color/grey"
+                        style="@style/TextColor"
                         android:textSize="15sp"
                         android:textStyle="normal"
 
@@ -115,6 +114,8 @@
             android:layout_marginTop="10dp"
             android:clickable="false"
             app:cardCornerRadius="20dp"
+            style="@style/CardBackground"
+
             app:constraint_referenced_ids=""
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -151,7 +152,7 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="5dp"
                         android:text="Practice With Ai"
-                        android:textColor="@color/purpleHaze"
+                        style="@style/TitleTextColor"
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
@@ -160,7 +161,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="20dp"
                         android:text="Practice with AI in different sceneraios"
-                        android:textColor="@color/grey"
+                        style="@style/TextColor"
                         android:textSize="15sp"
                         android:textStyle="normal"
 
@@ -180,6 +181,8 @@
             android:clickable="false"
             app:cardCornerRadius="20dp"
             app:constraint_referenced_ids=""
+            style="@style/CardBackground"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
@@ -215,7 +218,7 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="5dp"
                         android:text="Cards"
-                        android:textColor="@color/purpleHaze"
+                        style="@style/TitleTextColor"
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
@@ -224,7 +227,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="20dp"
                         android:text="Improve your memory with cards"
-                        android:textColor="@color/grey"
+                        style="@style/TextColor"
                         android:textSize="15sp"
                         android:textStyle="normal"
 
@@ -242,6 +245,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             app:cardCornerRadius="20dp"
+            style="@style/CardBackground"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardViewCards">
@@ -276,7 +281,7 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="5dp"
                         android:text="Writing"
-                        android:textColor="@color/purpleHaze"
+                        style="@style/TitleTextColor"
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
@@ -285,7 +290,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="20dp"
                         android:text="Learn correct writing of words"
-                        android:textColor="@color/grey"
+                        style="@style/TextColor"
                         android:textSize="15sp"
                         android:textStyle="normal"
 
@@ -300,6 +305,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            style="@style/CardBackground"
+
             app:cardCornerRadius="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -336,7 +343,7 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="5dp"
                         android:text="Test"
-                        android:textColor="@color/purpleHaze"
+                        style="@style/TitleTextColor"
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
@@ -345,7 +352,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="20dp"
                         android:text="Choose the right option"
-                        android:textColor="@color/grey"
+                        style="@style/TextColor"
                         android:textSize="15sp"
                         android:textStyle="normal"
 
@@ -362,6 +369,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             app:cardCornerRadius="20dp"
+            style="@style/CardBackground"
+
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cardViewTest">
@@ -397,7 +406,7 @@
                         android:paddingTop="20dp"
                         android:paddingBottom="5dp"
                         android:text="Pronunciation"
-                        android:textColor="@color/purpleHaze"
+                        style="@style/TitleTextColor"
                         android:textSize="30sp"
                         android:textStyle="bold" />
 
@@ -406,7 +415,7 @@
                         android:layout_height="wrap_content"
                         android:paddingBottom="20dp"
                         android:text="Make sure you pronounce it right"
-                        android:textColor="@color/grey"
+                        style="@style/TextColor"
                         android:textSize="15sp"
                         android:textStyle="normal"
 

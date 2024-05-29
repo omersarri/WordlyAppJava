@@ -1,5 +1,6 @@
 package com.omersari.wordlyjavafinal.adapter;
 
+import android.content.res.Configuration;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,12 +18,14 @@ import java.util.List;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHolder> {
     private final RecyclerViewInterface recyclerViewInterface;
-    public CategoryAdapter(List<Category> categoryList, RecyclerViewInterface recyclerViewInterface) {
+    public CategoryAdapter(List<Category> categoryList, RecyclerViewInterface recyclerViewInterface, int nightModeFlags) {
         this.categoryList = categoryList;
         this.recyclerViewInterface = recyclerViewInterface;
+        this.nightModeFlags = nightModeFlags;
     }
 
     private final List<Category> categoryList;
+    private int nightModeFlags;
 
     @NonNull
     @Override
@@ -34,11 +37,20 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.binding.textView12.setText(categoryList.get(position).getCategoryName());
-        if(categoryList.get(position).id == HomeFragment.selectedCategoryId){
-            holder.binding.textView12.setBackgroundColor(Color.parseColor("#9A76A5"));
+        if(nightModeFlags == Configuration.UI_MODE_NIGHT_YES){
+            if(categoryList.get(position).id == HomeFragment.selectedCategoryId){
+                holder.binding.textView12.setBackgroundColor(Color.parseColor("#0A2647"));
+            }else{
+                holder.binding.textView12.setBackgroundColor(Color.parseColor("#144272"));
+            }
         }else{
-            holder.binding.textView12.setBackgroundColor(Color.parseColor("#C89DD8"));
+            if(categoryList.get(position).id == HomeFragment.selectedCategoryId){
+                holder.binding.textView12.setBackgroundColor(Color.parseColor("#9A76A5"));
+            }else{
+                holder.binding.textView12.setBackgroundColor(Color.parseColor("#C89DD8"));
+            }
         }
+
 
 
     }

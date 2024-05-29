@@ -12,9 +12,5 @@
         android:title="Training"
         android:icon="@drawable/nav_training_selector"/>
 
-    <item
-        android:id="@+id/bottom_profile"
-        android:title="Profile"
-        android:icon="@drawable/nav_profile_selected"/>
 
 </menu>

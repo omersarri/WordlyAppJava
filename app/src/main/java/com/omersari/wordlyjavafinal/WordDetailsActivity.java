@@ -78,8 +78,8 @@ public class WordDetailsActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Dictionary> call, Response<Dictionary> response) {
                 if(!response.isSuccessful()) {
-                    Toast.makeText(WordDetailsActivity.this, response.code(), Toast.LENGTH_SHORT).show();
-                    System.out.println(response.code());
+                    Toast.makeText(WordDetailsActivity.this, "No data for this word.", Toast.LENGTH_SHORT).show();
+                    finish();
                 }else {
                     Dictionary dictionary = response.body();
                     binding.phoneticTextView.setText(dictionary.get(0).getPhonetic());

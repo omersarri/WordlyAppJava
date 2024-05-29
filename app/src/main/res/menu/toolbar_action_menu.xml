@@ -6,6 +6,7 @@
         android:id="@+id/action_addWord"
         android:icon="@drawable/ic_add"
         android:title="Add Word"
+
         app:showAsAction="ifRoom"/>
 
     <!-- Settings, should always be in the overflow -->

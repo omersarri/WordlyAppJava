@@ -10,15 +10,19 @@ import android.text.style.ForegroundColorSpan;
 import android.util.JsonReader;
 import android.view.View;
 import android.widget.Toast;
+import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.os.BuildCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
+import com.omersari.wordlyjavafinal.BuildConfig;
 import com.omersari.wordlyjavafinal.R;
 import com.omersari.wordlyjavafinal.adapter.QuestionAdapter;
 import com.omersari.wordlyjavafinal.databinding.ActivityStoryBinding;
@@ -54,6 +58,7 @@ public class StoryActivity extends AppCompatActivity {
     private int selectedCategoryId;
 
     private QuestionAdapter questionAdapter;
+    private String apiKey;
 
     public static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
@@ -66,6 +71,8 @@ public class StoryActivity extends AppCompatActivity {
         binding = ActivityStoryBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+        apiKey = BuildConfig.API_KEY;
+
         wordList = new ArrayList<>();
         questionArrayList = new ArrayList<>();
         wordManager = WordManager.getInstance();
@@ -205,7 +212,7 @@ public class StoryActivity extends AppCompatActivity {
             int startIndex = fullText.indexOf(keyword);
             while (startIndex != -1) {
                 int endIndex = startIndex + keyword.length();
-                spannableString.setSpan(new ForegroundColorSpan(Color.BLUE), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                spannableString.setSpan(new ForegroundColorSpan(Color.GREEN), startIndex, endIndex, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
                 startIndex = fullText.indexOf(keyword, endIndex);
             }
         }
@@ -272,7 +279,7 @@ public class StoryActivity extends AppCompatActivity {
         RequestBody body = RequestBody.create(jsonBody.toString(), JSON);
         Request request = new Request.Builder()
                 .url("https://api.openai.com/v1/chat/completions")
-                .header("Authorization", "Bearer sk-proj-KL5NWhzXii8IgqIYZDH3T3BlbkFJCujj1ikqwE9bJCWsbsA2")
+                .header("Authorization", "Bearer "+ apiKey)
                 .post(body)
                 .build();
 
@@ -311,7 +318,7 @@ public class StoryActivity extends AppCompatActivity {
     }
 
     public void listenStory(View view) {
-        textToSpeech.setSpeechRate(0.7f);
+        textToSpeech.setSpeechRate(0.80f);
         if (textToSpeech.isSpeaking()) {
             binding.listenButton.setImageResource(R.drawable.baseline_play_circle_24);
             textToSpeech.stop();

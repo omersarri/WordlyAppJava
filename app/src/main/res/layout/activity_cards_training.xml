@@ -23,6 +23,7 @@
         <ImageView
             android:layout_width="30dp"
             android:layout_height="30dp"
+            android:contentDescription="back button"
             android:src="@drawable/baseline_arrow_back_24"
             android:layout_marginEnd="10dp"
             android:onClick="backClick"/>
@@ -37,7 +38,7 @@
             android:id="@+id/bestScoreText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            style="@style/TextColor"
             android:text="Best: 0"
             android:textSize="25sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -67,6 +68,7 @@
             android:id="@+id/scoreText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/TextColor"
             android:text="Score: 0"
             android:textSize="25sp" />
     </LinearLayout>
@@ -93,6 +95,7 @@
             android:id="@+id/timeText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            style="@style/TextColor"
             android:text="Time: 0"
             android:textSize="25sp" />
     </LinearLayout>
@@ -104,7 +107,7 @@
         android:id="@+id/cardViewTrainingCards"
         android:layout_width="250dp"
         android:layout_height="350dp"
-        app:cardBackgroundColor="@color/secondaryColor"
+        style="@style/CardBackground"
         app:cardCornerRadius="20dp"
         app:cardElevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -176,6 +179,7 @@
 
         <ImageButton
             android:id="@+id/correctButton"
+            android:contentDescription="correct button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@android:color/transparent"

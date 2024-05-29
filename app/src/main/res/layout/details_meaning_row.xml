@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:text="Type"
         android:textStyle="bold"
-        style="@style/TextColor"
+        style="@style/TitleTextColor"
         android:textSize="30.sp"/>
 
     <TextView
@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:text="Definitions"
         android:textStyle="bold|italic"
-        style="@style/TextColor"
+        style="@style/SmallTitleTextColor"
         android:textSize="22.sp"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:text="Synonyms"
         android:textStyle="bold|italic"
-        style="@style/TextColor"
+        style="@style/SmallTitleTextColor"
         android:textSize="22.sp"/>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:text="Antonyms"
         android:textStyle="bold|italic"
-        style="@style/TextColor"
+        style="@style/SmallTitleTextColor"
         android:textSize="22.sp"/>
 
     <androidx.recyclerview.widget.RecyclerView

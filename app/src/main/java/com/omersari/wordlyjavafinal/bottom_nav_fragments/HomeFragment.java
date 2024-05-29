@@ -3,6 +3,7 @@ package com.omersari.wordlyjavafinal.bottom_nav_fragments;
 
 import android.app.AlertDialog;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,7 @@ public class HomeFragment extends Fragment implements RecyclerViewInterface {
     public static int selectedCategoryId = 1;
 
     private CategoryManager categoryManager;
+    private int nightModeFlags;
     private WordManager wordManager;
 
 
@@ -56,6 +58,7 @@ public class HomeFragment extends Fragment implements RecyclerViewInterface {
         categoryManager = CategoryManager.getInstance();
         wordManager = WordManager.getInstance();
         binding.floatingActionButton.setVisibility(View.GONE);
+        nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
         getWords();
         getCategories();
         floatingButtonClick();
@@ -119,7 +122,7 @@ public class HomeFragment extends Fragment implements RecyclerViewInterface {
                 }
                 //this.categoryList = categoryList;
                 binding.recyclerView2.setLayoutManager(new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false));
-                categoryAdapter = new CategoryAdapter(categoryList, HomeFragment.this);
+                categoryAdapter = new CategoryAdapter(categoryList, HomeFragment.this, nightModeFlags);
                 binding.recyclerView2.setAdapter(categoryAdapter);
             }
 

@@ -7,7 +7,6 @@
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/backgroundColor"
     android:gravity="center"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent"
@@ -19,7 +18,7 @@
         android:text="Add New Word"
         android:gravity="start"
         android:textSize="35sp"
-        android:textColor="@color/purpleHaze"
+        style="@style/TitleTextColor"
         android:textStyle="bold"
         android:layout_marginBottom="30dp"/>
 
@@ -30,6 +29,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/custom_input"
         android:ems="20"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darkGrey"
         android:hint="@string/enter_the_word"
         android:inputType="text"
         android:paddingStart="10dp"
@@ -49,6 +50,8 @@
         android:layout_marginBottom="5dp"
         android:background="@drawable/custom_input"
         android:drawablePadding="10dp"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darkGrey"
         android:ems="20"
         android:hint="@string/enter_the_meaning"
         android:inputType="text"
@@ -215,7 +218,5 @@
         android:layout_height="wrap_content"
         android:onClick="saveButtonClicked"
         android:text="Save"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/purpleHaze"/>
-
+        android:textColor="@color/white"/>
 </LinearLayout>

@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginHorizontal="5dp"
-    style="@style/ScreenBackground"
     tools:context=".WordDetailsActivity">
 
 
@@ -28,11 +27,11 @@
 
         <TextView
             android:id="@+id/wordTextView"
-            style="@style/TextColor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
+            style="@style/TitleTextColor"
             android:text="Word"
             android:textSize="30.sp"
             android:textStyle="bold" />

@@ -1,3 +1,5 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
 }
@@ -14,6 +16,16 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Read the API key from the local.properties file
+        val properties = Properties()
+        val localProperties = rootProject.file("local.properties")
+        if (localProperties.exists()) {
+            properties.load(localProperties.inputStream())
+        }
+
+        val apiKey: String = properties.getProperty("apiKey", "")
+        buildConfigField("String", "API_KEY", "\"$apiKey\"")
     }
 
     buildTypes {
@@ -31,6 +43,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -38,6 +51,7 @@ dependencies {
 
     //animations
     implementation ("com.daimajia.androidanimations:library:2.4@aar")
+
 
 
 

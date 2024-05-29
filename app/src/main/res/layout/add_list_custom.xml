@@ -10,9 +10,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Create List"
+        android:text="Add List"
         android:textSize="35sp"
-        android:textColor="@color/purpleHaze"
+        style="@style/TitleTextColor"
         android:textStyle="bold" />
 
     <EditText
@@ -23,6 +23,8 @@
         android:layout_marginBottom="5dp"
         android:background="@drawable/custom_input"
         android:ems="15"
+        android:textColor="@color/black"
+        android:textColorHint="@color/darkGrey"
         android:hint="Enter Category Name"
         android:paddingStart="10dp"
         android:paddingTop="10dp"
@@ -34,7 +36,6 @@
         android:id="@+id/addCategoryButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/purpleHaze"
         android:text="Save"
         android:textColor="@color/white" />
 

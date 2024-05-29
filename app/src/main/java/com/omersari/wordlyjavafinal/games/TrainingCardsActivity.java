@@ -2,31 +2,19 @@ package com.omersari.wordlyjavafinal.games;
 
 import android.content.Context;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
 import android.os.CountDownTimer;
 
 import android.view.View;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.ItemTouchHelper;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.room.Room;
 
 
 import com.daimajia.androidanimations.library.Techniques;
 import com.daimajia.androidanimations.library.YoYo;
-import com.omersari.wordlyjavafinal.adapter.CardAdapter;
-import com.omersari.wordlyjavafinal.database.WordDao;
-import com.omersari.wordlyjavafinal.database.WordDatabase;
 import com.omersari.wordlyjavafinal.databinding.ActivityCardsTrainingBinding;
 import com.omersari.wordlyjavafinal.model.Word;
 import com.omersari.wordlyjavafinal.model.WordManager;
@@ -34,10 +22,6 @@ import com.omersari.wordlyjavafinal.model.WordManager;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
-import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
-import io.reactivex.rxjava3.disposables.CompositeDisposable;
-import io.reactivex.rxjava3.schedulers.Schedulers;
 
 public class TrainingCardsActivity extends AppCompatActivity{
 
@@ -122,7 +106,6 @@ public class TrainingCardsActivity extends AppCompatActivity{
             selectedWord = words.get(randomIndex);
             binding.wordCardText.setText(selectedWord.getName());
             binding.meaningCardText.setText(selectedWord.getMeaning());
-            System.out.println(selectedWord.getStats().size());
         }
 
     }

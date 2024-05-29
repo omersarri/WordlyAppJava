@@ -1,6 +1,7 @@
 package com.omersari.wordlyjavafinal;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,13 +14,14 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 import com.omersari.wordlyjavafinal.bottom_nav_fragments.HomeFragment;
-import com.omersari.wordlyjavafinal.bottom_nav_fragments.ProfileFragment;
 import com.omersari.wordlyjavafinal.bottom_nav_fragments.TrainingFragment;
 import com.omersari.wordlyjavafinal.databinding.ActivityMainBinding;
 import com.omersari.wordlyjavafinal.model.Category;
@@ -56,7 +58,6 @@ public class MainActivity extends AppCompatActivity{
         categoryManager.getCategories(this, new CategoryManager.GetCategoriesCallback() {
             @Override
             public void onSuccess(ArrayList<Category> categoryArrayList) {
-                System.out.println("Veriler Çekildi");
             }
 
             @Override
@@ -64,6 +65,20 @@ public class MainActivity extends AppCompatActivity{
                 Toast.makeText(MainActivity.this, errorMessage, Toast.LENGTH_SHORT).show();
             }
         });
+
+        BottomNavigationView bottomNavigationView = binding.bottomNavigationView;
+        bottomNavigationView.setBackground(ContextCompat.getDrawable(this, R.drawable.bottombar_shape));
+
+        int nightModeFlags = getResources().getConfiguration().uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        if (nightModeFlags == Configuration.UI_MODE_NIGHT_YES) {
+            bottomNavigationView.setItemTextColor(getResources().getColorStateList(R.color.lightGray, getTheme()));
+            bottomNavigationView.setItemIconTintList(getResources().getColorStateList(R.color.lightGray, getTheme()));
+            bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.secondary_dark, getTheme()));
+        } else {
+            bottomNavigationView.setItemTextColor(getResources().getColorStateList(R.color.lightGray, getTheme()));
+            bottomNavigationView.setItemIconTintList(getResources().getColorStateList(R.color.lightGray, getTheme()));
+            bottomNavigationView.setBackgroundColor(getResources().getColor(R.color.secondary, getTheme()));
+        }
 
 
         bottomNavBar();
@@ -94,11 +109,6 @@ public class MainActivity extends AppCompatActivity{
                             mState= false;
                             item.setChecked(true);
                             invalidateOptionsMenu();
-                        } else if(R.id.bottom_profile == item.getItemId()){
-                            openFragment(new ProfileFragment());
-                            mState= false;
-                            item.setChecked(true);
-                            invalidateOptionsMenu();
                         }
                         return false;
                     }
@@ -106,47 +116,7 @@ public class MainActivity extends AppCompatActivity{
         );
     }
 
-    /*
-    //Drawer navigation
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        int id = item.getItemId();
-        if(id == R.id.nav_home){
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
-            mState=true;
-            invalidateOptionsMenu();
 
-        }else if(id == R.id.nav_training) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new TrainingFragment()).commit();
-            mState=false;
-            invalidateOptionsMenu();
-
-        }else if(id == R.id.nav_settings) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new SettingsFragment()).commit();
-            mState=false;
-            invalidateOptionsMenu();
-
-        }else if(id == R.id.nav_export) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new ExportFragment()).commit();
-            mState=false;
-            invalidateOptionsMenu();
-
-        }else if(id == R.id.nav_about) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new AboutFragment()).commit();
-            mState=false;
-            invalidateOptionsMenu();
-
-        }else if(id == R.id.nav_logout) {
-
-
-        }
-
-
-        drawerLayout.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-     */
     //toolbar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

@@ -25,6 +25,7 @@
         android:gravity="center"
         android:text="Welcome to Practicing AI. Select the role to Continue"
         android:textSize="26dp"
+        style="@style/TitleTextColor"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -214,9 +215,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
+            android:textColor="@color/black"
             android:layout_toLeftOf="@id/send_btn"
             android:background="@drawable/rounded_corner"
             android:hint="Write here "
+            android:textColorHint="@color/darkGrey"
             android:padding="16dp" />
 
         <ImageButton
@@ -226,6 +229,7 @@
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
             android:layout_marginStart="10dp"
+            style="@style/IconTint"
             android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="8dp"
             android:src="@drawable/ic_baseline_send_24"

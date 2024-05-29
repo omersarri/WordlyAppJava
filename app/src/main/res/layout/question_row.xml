@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_margin="10dp"
-    android:backgroundTint="@color/blue"
+    style="@style/CardBackground"
     android:background="@drawable/outline">
 
     <LinearLayout
@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             android:text="Question text goes here"
             android:textSize="18sp"
-            android:textColor="@color/white"
             android:textStyle="bold"
             android:layout_marginBottom="16dp"/>
 
@@ -33,9 +32,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/outline"
-                android:backgroundTint="@color/white"
+                style="@style/IconBackground"
                 android:layout_marginBottom="2dp"
-
                 android:text="Choice A"/>
 
             <RadioButton
@@ -43,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/outline"
-                android:backgroundTint="@color/white"
+                style="@style/IconBackground"
                 android:layout_marginBottom="2dp"
                 android:text="Choice B"/>
 
@@ -52,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/outline"
-                android:backgroundTint="@color/white"
+                style="@style/IconBackground"
                 android:layout_marginBottom="2dp"
                 android:text="Choice C"/>
 
@@ -61,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/outline"
-                android:backgroundTint="@color/white"
+                style="@style/IconBackground"
 
                 android:text="Choice D"/>
         </RadioGroup>
@@ -71,7 +69,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:backgroundTint="@color/ivory"
             android:layout_gravity="center"
             android:text="Check"/>
 

@@ -22,6 +22,7 @@ import com.omersari.wordlyjavafinal.games.PracticeAIActivity;
 import com.omersari.wordlyjavafinal.games.StoryActivity;
 import com.omersari.wordlyjavafinal.games.TrainingCardsActivity;
 import com.omersari.wordlyjavafinal.databinding.FragmentTrainingBinding;
+import com.omersari.wordlyjavafinal.games.TrainingPronunciationActivity;
 import com.omersari.wordlyjavafinal.games.TrainingTestActivity;
 import com.omersari.wordlyjavafinal.games.TrainingWritingActivity;
 import com.omersari.wordlyjavafinal.model.Category;
@@ -77,6 +78,7 @@ public class TrainingFragment extends Fragment {
         cardViewStoryClicked();
         cardViewWritingClicked();
         cardViewTestClicked();
+        cardViewPronunciationClicked();
         getCategories();
         selectListSpinner();
 
@@ -164,6 +166,18 @@ public class TrainingFragment extends Fragment {
                 Intent intentToTestTraining = new Intent(getContext(), TrainingTestActivity.class);
                 intentToTestTraining.putExtra("selectedCategoryId",selectedCategoryId);
                 startActivity(intentToTestTraining);
+            }
+        });
+    }
+
+    private void cardViewPronunciationClicked() {
+        CardView cardsButton = binding.cardViewPronunciation;
+        cardsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intentToPronunciationTraining = new Intent(getContext(), TrainingPronunciationActivity.class);
+                intentToPronunciationTraining.putExtra("selectedCategoryId",selectedCategoryId);
+                startActivity(intentToPronunciationTraining);
             }
         });
     }

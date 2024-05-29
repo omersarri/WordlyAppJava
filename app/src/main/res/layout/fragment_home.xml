@@ -31,7 +31,7 @@
             android:gravity="center"
             android:text="There are no items. Please add some."
             android:textSize="25sp"
-            android:textColor="@color/lilac" />
+            style="@style/SmallTitleTextColor" />
 
     </LinearLayout>
 

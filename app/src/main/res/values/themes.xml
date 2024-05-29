@@ -1,19 +1,64 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="AppTheme" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/levander</item>
-        <item name="colorPrimaryVariant">@color/levander</item>
+
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/secondary</item>
         <item name="colorOnPrimary">@color/white</item>
 
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="colorSecondary">@color/tertiary</item>
+        <item name="colorSecondaryVariant">@color/tertiary</item>
+        <item name="colorOnSecondary">@color/white</item>
+
+
+        <item name="android:statusBarColor">@color/primary</item>
     </style>
 
-    <style name="ScreenBackground"><item name="android:background">@color/white</item></style>
-    <style name="CardBackground"><item name="android:background">@color/white</item></style>
-    <style name="TextColor"><item name="android:textColor">@color/darkGrey</item></style>
-    <style name="NavHeaderBackground"><item name="android:background">@color/levander</item></style>
-    <style name="ImageColor"><item name="android:tint">@color/darkGrey</item></style>
-    <style name="IconBackground"><item name="android:background">@color/white</item></style>
+    <style name="CardBackground">
+        <item name="android:backgroundTint">@color/secondary</item>
+    </style>
+    <style name="SplashBackground">
+        <item name="android:background">@color/secondary</item>
+    </style>
+
+    <style name="IconBackground">
+        <item name="android:backgroundTint">@color/tertiary</item>
+    </style>
+    <style name="IconTint">
+        <item name="android:tint">@color/tertiary</item>
+    </style>
+
+    <style name="TextColor">
+        <item name="android:textColor">@color/darkGrey</item>
+    </style>
+
+    <style name="TitleTextColor">
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <style name="SmallTitleTextColor">
+        <item name="android:textColor">@color/tertiary</item>
+    </style>
+
+    <style name="NavHeaderBackground">
+        <item name="android:backgroundTint">@color/primary</item>
+        <item name="android:background">@drawable/toolbar_shape</item>
+    </style>
+
+    <style name="BottomNavigationViewStyle.Light" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/secondary</item>
+        <item name="itemTextColor">@color/lightGray</item>
+        <item name="itemIconTint">@color/lightGray</item>
+    </style>
+
+    <style name="TrainingTestButtons" parent="Widget.MaterialComponents.Button">
+        <item name="android:backgroundTint">@color/white</item>
+        <item name="android:background">@drawable/outline</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
+
 
 </resources>

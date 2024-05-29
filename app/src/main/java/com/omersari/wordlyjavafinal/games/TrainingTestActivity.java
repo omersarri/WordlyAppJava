@@ -83,7 +83,7 @@ public class TrainingTestActivity extends AppCompatActivity {
 
                 if(wordArrayList.size()<5){
                     Toast.makeText(TrainingTestActivity.this, "Not enough words", Toast.LENGTH_SHORT).show();
-                    return;
+                    finish();
                 }
 
                 for (Word word : wordArrayList) {

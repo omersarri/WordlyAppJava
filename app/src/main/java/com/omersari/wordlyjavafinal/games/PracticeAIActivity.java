@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.omersari.wordlyjavafinal.BuildConfig;
 import com.omersari.wordlyjavafinal.adapter.MessageAdapter;
 import com.omersari.wordlyjavafinal.databinding.ActivityPracticeAiactivityBinding;
 import com.omersari.wordlyjavafinal.model.Message;
@@ -36,13 +37,15 @@ import okhttp3.Response;
 public class PracticeAIActivity extends AppCompatActivity {
     private ActivityPracticeAiactivityBinding binding;
 
-    RecyclerView recyclerView;
-    TextView welcomeTextView;
-    EditText messageEditText;
-    ImageButton sendButton;
-    List<Message> messageList;
-    List<String> conversationHistory;
-    MessageAdapter messageAdapter;
+    private RecyclerView recyclerView;
+    private TextView welcomeTextView;
+    private EditText messageEditText;
+    private ImageButton sendButton;
+    private List<Message> messageList;
+    private List<String> conversationHistory;
+    private MessageAdapter messageAdapter;
+
+    private String apiKey;
     public static final MediaType JSON
             = MediaType.get("application/json; charset=utf-8");
     OkHttpClient client = new OkHttpClient.Builder()
@@ -55,6 +58,7 @@ public class PracticeAIActivity extends AppCompatActivity {
         binding = ActivityPracticeAiactivityBinding.inflate(getLayoutInflater());
         View view = binding.getRoot();
         setContentView(view);
+        apiKey = BuildConfig.API_KEY;
 
         messageList = new ArrayList<>();
         conversationHistory = new ArrayList<>();
@@ -204,7 +208,7 @@ public class PracticeAIActivity extends AppCompatActivity {
         Request request = new Request.Builder()
                 .url("\n" +
                         "https://api.openai.com/v1/chat/completions")
-                .header("Authorization","Bearer sk-proj-KL5NWhzXii8IgqIYZDH3T3BlbkFJCujj1ikqwE9bJCWsbsA2")
+                .header("Authorization","Bearer "+ apiKey)
                 .post(body)
                 .build();
 

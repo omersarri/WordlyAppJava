@@ -8,7 +8,7 @@
     tools:context=".SplashActivity"
     android:orientation="vertical"
     android:gravity="center"
-    android:background="@color/lilac">
+    style="@style/SplashBackground">
 
 
     <ImageView
@@ -17,13 +17,14 @@
         android:layout_height="150dp"
         android:elevation="10dp"
         android:src="@drawable/pic1"
+        
          />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/audiowide"
-        android:text="Wordly"
+        android:text="@string/app_name"
         android:textColor="@color/white"
         android:textSize="40dp"
         android:textStyle="bold" />
